@@ -1,6 +1,8 @@
 @extends('layout')
-@section('title', 'Spēļu saraksts')
-
+<head>  
+    <link rel="icon" type="image/png" href="{{ asset('storage/other/logofavicon.png') }}">
+</head>
+@section('title','Spēļu kalendārs')
 @section('content')
 
 @if(count($matches)==0)
@@ -17,7 +19,7 @@
                     <img src="{{ $match->awayTeam->logo_path }}" alt="{{ $match->awayTeam->name }}" style="height: 40px;" class="mx-2">
                 </h2>
                 <p class="mb-2 text-muted">
-                    {{ $match['stadium'] }}, {{ $match['date'] }}
+                    {{ $match['matchweek'] }}. Kārta, {{ $match['stadium'] }}, {{ $match['date'] }}
                 </p>
                 <hr class="mx-auto" style="width: 700px; border-top: 2px solid #ccc;">
             </div>

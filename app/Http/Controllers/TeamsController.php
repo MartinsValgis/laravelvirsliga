@@ -28,12 +28,15 @@ public function show($id)
       ->get();
 
     // Nākamās spēles
-    $upcomingMatches = Matches::where(function ($query) use ($id) {
-        $query->where('home_team_id', $id)
-              ->orWhere('away_team_id', $id);
-    })->where('date', '>=', $today)
-      ->orderBy('date', 'asc')
-      ->get();
+    $upcomingMatches = Matches::with(['homeTeam', 'awayTeam'])
+        ->where(function($query) use ($id) {
+            $query->where('home_team_id', $id)
+                  ->orWhere('away_team_id', $id);
+        })
+        ->where('date', '>=', now())
+        ->orderBy('date')
+        ->limit(3)
+        ->get();
 
     return view('team', compact('team', 'teams', 'pastMatches', 'upcomingMatches'));
 }

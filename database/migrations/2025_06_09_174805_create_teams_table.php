@@ -15,6 +15,7 @@ return new class extends Migration
     $table->id();
     $table->string('name', 30);
     $table->string('city', 30);
+    $table->string('treneris', 30);
     $table->string('logo_path', 50)->nullable();
     $table->timestamps();
 });

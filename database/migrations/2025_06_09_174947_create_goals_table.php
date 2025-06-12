@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('goals', function (Blueprint $table) {
     $table->id();
     $table->foreignId('goalscorer_id')->constrained('players');
-    $table->foreignId('assist_id')->constrained('players')->nullable();
+    $table->foreignId('assist_id')->nullable()->constrained('players');
     $table->foreignId('match_id')->constrained('matches');
     $table->float('minute', 4, 1);
     $table->boolean('own_goal')->default(false);

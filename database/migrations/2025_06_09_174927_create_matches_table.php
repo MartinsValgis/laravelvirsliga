@@ -15,11 +15,11 @@ return new class extends Migration
     $table->id();
     $table->foreignId('home_team_id')->constrained('teams');
     $table->foreignId('away_team_id')->constrained('teams');
-    $table->foreignId('referee_id')->constrained('referees');
+    $table->foreignId('referee_id')->nullable()->constrained('referees');
     $table->datetime('date')->nullable();
     $table->integer('matchweek');
-    $table->integer('homegoals');
-    $table->integer('awaygoals');
+    $table->integer('homegoals')->nullable();
+    $table->integer('awaygoals')->nullable();
     $table->string('stadium', 50)->nullable();
     $table->timestamps();
 });

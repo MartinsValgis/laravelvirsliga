@@ -53,7 +53,208 @@ class cardSeeder extends Seeder
         'match_id' => '1',
         'minute' => '87',
         'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '14',
+        'match_id' => '3',
+        'minute' => '23',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '15',
+        'match_id' => '3',
+        'minute' => '54',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '16',
+        'match_id' => '3',
+        'minute' => '63',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '17',
+        'match_id' => '3',
+        'minute' => '70',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '18',
+        'match_id' => '3',
+        'minute' => '75',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '19',
+        'match_id' => '3',
+        'minute' => '76',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '21',
+        'match_id' => '3',
+        'minute' => '89',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '22',
+        'match_id' => '3',
+        'minute' => '93',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '24',
+        'match_id' => '2',
+        'minute' => '47',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '25',
+        'match_id' => '2',
+        'minute' => '55',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '26',
+        'match_id' => '2',
+        'minute' => '64',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '27',
+        'match_id' => '2',
+        'minute' => '75',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '27',
+        'match_id' => '2',
+        'minute' => '75',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '28',
+        'match_id' => '2',
+        'minute' => '90',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '30',
+        'match_id' => '4',
+        'minute' => '11',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '32',
+        'match_id' => '4',
+        'minute' => '40',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '33',
+        'match_id' => '4',
+        'minute' => '55',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '34',
+        'match_id' => '4',
+        'minute' => '56',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '37',
+        'match_id' => '4',
+        'minute' => '86',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '41',
+        'match_id' => '5',
+        'minute' => '35',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '44',
+        'match_id' => '5',
+        'minute' => '90',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '45',
+        'match_id' => '6',
+        'minute' => '5',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '46',
+        'match_id' => '6',
+        'minute' => '29',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '47',
+        'match_id' => '6',
+        'minute' => '41',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '49',
+        'match_id' => '6',
+        'minute' => '55',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '50',
+        'match_id' => '6',
+        'minute' => '87',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '54',
+        'match_id' => '7',
+        'minute' => '51',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '56',
+        'match_id' => '7',
+        'minute' => '70',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '52',
+        'match_id' => '7',
+        'minute' => '71',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '35',
+        'match_id' => '7',
+        'minute' => '73',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '21',
+        'match_id' => '8',
+        'minute' => '41',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '15',
+        'match_id' => '8',
+        'minute' => '60',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '60',
+        'match_id' => '8',
+        'minute' => '74',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '58',
+        'match_id' => '8',
+        'minute' => '93',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '59',
+        'match_id' => '8',
+        'minute' => '94',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '34',
+        'match_id' => '9',
+        'minute' => '86',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '63',
+        'match_id' => '10',
+        'minute' => '15',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '63',
+        'match_id' => '10',
+        'minute' => '20',
+        'card_type' => 'r',
+    ]);\App\Models\cards::create([
+        'player_id' => '61',
+        'match_id' => '10',
+        'minute' => '25',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '61',
+        'match_id' => '10',
+        'minute' => '25',
+        'card_type' => 'y',
     ]);
+
 
 
     }
