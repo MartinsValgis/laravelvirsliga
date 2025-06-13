@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    
 </head>
 <body>
 
@@ -12,7 +14,7 @@
 <div class="bg-danger py-3">
     <div class="d-flex">
         <div class="ps-3">
-            <img src="{{ asset('other/virsligalogo.png') }}" alt="Virslīga Logo" class="img-fluid" style="height: 100px;">
+            <a href="/"><img src="{{ asset('other/virsligalogo.png') }}" alt="Virslīga Logo" class="img-fluid" style="height: 100px;"></a> 
         </div>
         <div class="flex-grow-1">
             <div class="container">

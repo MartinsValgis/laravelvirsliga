@@ -253,6 +253,91 @@ class cardSeeder extends Seeder
         'match_id' => '10',
         'minute' => '25',
         'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '51',
+        'match_id' => '11',
+        'minute' => '11',
+        'card_type' => 'r',
+    ]);\App\Models\cards::create([
+        'player_id' => '25',
+        'match_id' => '11',
+        'minute' => '58',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '65',
+        'match_id' => '11',
+        'minute' => '94',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '67',
+        'match_id' => '12',
+        'minute' => '59',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '8',
+        'match_id' => '12',
+        'minute' => '76',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '76',
+        'match_id' => '13',
+        'minute' => '22',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '78',
+        'match_id' => '13',
+        'minute' => '47',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '79',
+        'match_id' => '13',
+        'minute' => '64',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '79',
+        'match_id' => '13',
+        'minute' => '68',
+        'card_type' => 'r',
+    ]);\App\Models\cards::create([
+        'player_id' => '72',
+        'match_id' => '13',
+        'minute' => '82',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '73',
+        'match_id' => '13',
+        'minute' => '92',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '6',
+        'match_id' => '14',
+        'minute' => '93',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '83',
+        'match_id' => '15',
+        'minute' => '26',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '85',
+        'match_id' => '15',
+        'minute' => '44',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '56',
+        'match_id' => '15',
+        'minute' => '61',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '88',
+        'match_id' => '15',
+        'minute' => '65',
+        'card_type' => 'y',
+    ]);\App\Models\cards::create([
+        'player_id' => '18',
+        'match_id' => '15',
+        'minute' => '66',
+        'card_type' => 'y',
     ]);
 
 

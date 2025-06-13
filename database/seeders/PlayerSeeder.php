@@ -343,7 +343,128 @@ class PlayerSeeder extends Seeder
         'number' => '95',
         'name' => 'Milāns Tihonovičs',
         'img_path' =>'players/tihonovics.png',
+    ]);\App\Models\players::create([
+        'team_id' => '6',
+        'number' => '1',
+        'name' => 'Adam Dvorak',
+        'img_path' =>'players/dvorak.png',
+    ]);\App\Models\players::create([
+        'team_id' => '1',
+        'number' => '7',
+        'name' => 'Eduards Dašķevičs',
+        'img_path' =>'players/daskevics.png',
+    ]);\App\Models\players::create([
+        'team_id' => '4',
+        'number' => '10',
+        'name' => 'Wally Fofana',
+        'img_path' =>'players/fofana.png',
+    ]);\App\Models\players::create([
+        'team_id' => '4',
+        'number' => '18',
+        'name' => 'Maksims Kopilovs',
+        'img_path' =>'players/kopilovs.png',
+    ]);\App\Models\players::create([
+        'team_id' => '2',
+        'number' => '43',
+        'name' => 'Žiga Lipušček',
+        'img_path' =>'players/lipuscek.png',
+    ]);\App\Models\players::create([
+        'team_id' => '8',
+        'number' => '21',
+        'name' => 'Kristofers Rēķis',
+        'img_path' =>'players/rekis.png',
+    ]);\App\Models\players::create([
+        'team_id' => '8',
+        'number' => '11',
+        'name' => 'Markuss Ivulāns',
+        'img_path' =>'players/ivulans.png',
+    ]);\App\Models\players::create([
+        'team_id' => '8',
+        'number' => '18',
+        'name' => 'Emīls Evelons',
+        'img_path' =>'players/evelons.png',
+    ]);\App\Models\players::create([
+        'team_id' => '8',
+        'number' => '24',
+        'name' => 'Ņikita Parfjonovs',
+        'img_path' =>'players/parfjonovs.png',
+    ]);\App\Models\players::create([
+        'team_id' => '8',
+        'number' => '10',
+        'name' => 'Rūdolfs Kļavinskis',
+        'img_path' =>'players/klavinskis.png',
+    ]);\App\Models\players::create([
+        'team_id' => '10',
+        'number' => '18',
+        'name' => 'Niks Dusalijevs',
+        'img_path' =>'players/dusalijevs.png',
+    ]);\App\Models\players::create([
+        'team_id' => '10',
+        'number' => '8',
+        'name' => 'Rūdolfs Reingolcs',
+        'img_path' =>'players/reingolcs.png',
+    ]);\App\Models\players::create([
+        'team_id' => '10',
+        'number' => '15',
+        'name' => 'Raivis Ķiršs',
+        'img_path' =>'players/kirss.png',
+    ]);\App\Models\players::create([
+        'team_id' => '10',
+        'number' => '10',
+        'name' => 'Bogdans Samoilovs',
+        'img_path' =>'players/samoilovs.png',
+    ]);\App\Models\players::create([
+        'team_id' => '10',
+        'number' => '6',
+        'name' => 'Kristers Volkovs',
+        'img_path' =>'players/volkovs.png',
+    ]);\App\Models\players::create([
+        'team_id' => '3',
+        'number' => '11',
+        'name' => 'Oluwatimilehin Ogunniyi',
+        'img_path' =>'players/ogunniyi.png',
+    ]);\App\Models\players::create([
+        'team_id' => '3',
+        'number' => '27',
+        'name' => 'Emīls Birka',
+        'img_path' =>'players/birka.png',
+    ]);\App\Models\players::create([
+        'team_id' => '7',
+        'number' => '28',
+        'name' => 'Andrii Korobenko',
+        'img_path' =>'players/korobenko.png',
+    ]);\App\Models\players::create([
+        'team_id' => '7',
+        'number' => '3',
+        'name' => 'Kirils Iļjins',
+        'img_path' =>'players/iljins.png',
+    ]);\App\Models\players::create([
+        'team_id' => '7',
+        'number' => '26',
+        'name' => 'Vjačeslavs Isajevs',
+        'img_path' =>'players/isajevs.png',
+    ]);\App\Models\players::create([
+        'team_id' => '7',
+        'number' => '91',
+        'name' => 'Marin Lausic',
+        'img_path' =>'players/lausic.png',
+    ]);\App\Models\players::create([
+        'team_id' => '7',
+        'number' => '14',
+        'name' => 'Djibril Gueye',
+        'img_path' =>'players/gueye.png',
+    ]);\App\Models\players::create([
+        'team_id' => '7',
+        'number' => '9',
+        'name' => 'Luiz Paulo Hilario',
+        'img_path' =>'players/hilario.png',
+    ]);\App\Models\players::create([
+        'team_id' => '5',
+        'number' => '7',
+        'name' => 'Jānis Krautmanis',
+        'img_path' =>'players/krautmanis.png',
     ]);
+
 
 
 

@@ -12,7 +12,7 @@ class PlayersController extends Controller
     public function show($id)
     {
         $player = Players::with('team')->findOrFail($id);
-        $goals = Goals::where('goalscorer_id', $id)->count();
+        $goals = Goals::where('goalscorer_id', $id)->where('own_goal', false)->count();
         $assists = Goals::where('assist_id', $id)->count();
 
         $yellowCards = Cards::where('player_id', $id)->where('card_type', 'y')->count();

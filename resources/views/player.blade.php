@@ -22,23 +22,40 @@
             </div>
 
             <div class="col-md-8">
-                <h3 class="mb-4">Statistika</h3>
+    <h3 class="mb-4">Statistika</h3>
 
-                    <table class="table text-center align-middle border border-3 rounded overflow-hidden mb-0 no-inner-borders">
-                            <tr>
-                                <th><img src="/other/goal.png" alt="Gūtie vārti" style="height: 40px;"></th>
-                                <th><img src="/other/assist.png" alt="Rezultatīvās piespēles" style="height: 40px;"></th>
-                                <th><img src="/other/yellowcard.png" alt="Dzeltenās kartītes" style="height: 40px;"></th>
-                                <th><img src="/other/redcard.png" alt="Sarkanās kartītes" style="height: 40px;"></th>
-                            </tr>
-                            <tr>
-                                <td>{{ $goals }}</td>
-                                <td>{{ $assists }}</td>
-                                <td>{{ $yellowCards }}</td>
-                                <td>{{ $redCards }}</td>
-                            </tr>
-                    </table>
-            </div>
+    <table
+    class="table text-center align-middle border border-3 rounded overflow-hidden mb-0"
+    style="
+        background-color: {{ $player->team->teamcolor }};
+        color: {{ $player->team->teamsecondarycolor }};
+        border-color: {{ $player->team->teamsecondarycolor }};
+    ">
+
+    <tr>
+        <th style="background-color: inherit; color: inherit; border: none;">
+            <img src="/other/goal.png" alt="Gūtie vārti" style="height: 40px;" title="Vārti">
+        </th>
+        <th style="background-color: inherit; color: inherit; border: none;">
+            <img src="/other/assist.png" alt="Rezultatīvās piespēles" style="height: 40px;" title="Rez. piespēles">
+        </th>
+        <th style="background-color: inherit; color: inherit; border: none;">
+            <img src="/other/yellowcard.png" alt="Dzeltenās kartītes" style="height: 40px;" title="dzeltenās kartiņas">
+        </th>
+        <th style="background-color: inherit; color: inherit; border: none;">
+            <img src="/other/redcard.png" alt="Sarkanās kartītes" style="height: 40px;" title="sarkanās kartiņas">
+        </th>
+    </tr>
+    <tr>
+        <td style="background-color: inherit; color: inherit; border: none; font-weight: bold; font-size:20pt">{{ $goals }}</td>
+        <td style="background-color: inherit; color: inherit; border: none; font-weight: bold; font-size:20pt">{{ $assists }}</td>
+        <td style="background-color: inherit; color: inherit; border: none; font-weight: bold; font-size:20pt">{{ $yellowCards }}</td>
+        <td style="background-color: inherit; color: inherit; border: none; font-weight: bold; font-size:20pt">{{ $redCards }}</td>
+    </tr>
+</table>
+
+    
+</div>
         </div>
         <div class="row pt-5">
             <h2>Citi {{ $player->team->name }} spēlētāji:</h2>

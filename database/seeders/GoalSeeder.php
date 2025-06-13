@@ -183,7 +183,104 @@ class GoalSeeder extends Seeder
         'match_id' => '10',
         'minute' => '92',
         'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '16',
+        'assist_id' => '13',
+        'match_id' => '11',
+        'minute' => '65',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '29',
+        'assist_id' => '66',
+        'match_id' => '11',
+        'minute' => '63',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '69',
+        'assist_id' => '8',
+        'match_id' => '12',
+        'minute' => '32',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '2',
+        'assist_id' => '8',
+        'match_id' => '12',
+        'minute' => '39',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '68',
+        'assist_id' => '35',
+        'match_id' => '12',
+        'minute' => '73',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '75',
+        'assist_id' => null,
+        'match_id' => '13',
+        'minute' => '12',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '70',
+        'assist_id' => null,
+        'match_id' => '13',
+        'minute' => '16',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '77',
+        'assist_id' => '75',
+        'match_id' => '13',
+        'minute' => '43',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '71',
+        'assist_id' => null,
+        'match_id' => '13',
+        'minute' => '55',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '72',
+        'assist_id' => '74',
+        'match_id' => '13',
+        'minute' => '62',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '80',
+        'assist_id' => '81',
+        'match_id' => '14',
+        'minute' => '78',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '82',
+        'assist_id' => '87',
+        'match_id' => '15',
+        'minute' => '14',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '39',
+        'assist_id' => null,
+        'match_id' => '15',
+        'minute' => '25',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '84',
+        'assist_id' => '39',
+        'match_id' => '15',
+        'minute' => '40',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '14',
+        'assist_id' => null,
+        'match_id' => '15',
+        'minute' => '48',
+        'own_goal' => '0',
+    ]);\App\Models\goals::create([
+        'goalscorer_id' => '86',
+        'assist_id' => '83',
+        'match_id' => '15',
+        'minute' => '84',
+        'own_goal' => '0',
     ]);
+
 
 
 
