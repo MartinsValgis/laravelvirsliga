@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('title', $player->name)
+
 <head>
     <link rel="icon" type="image/png" href="{{ asset('storage/' . $player->team->logo_path) }}">
 </head>
@@ -8,70 +9,76 @@
 
 @section('content')
 
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <img src="{{ asset($player->img_path) }}" alt="{{ $player->name }}" class="rounded mb-3 img-fluid" style="height: 300px; object-fit: cover;">
-                
-                <h2 class="fw-bold">{{ $player->name }} #{{ $player->number }}</h2>
-                <a href="{{ route('team.show', ['id' => $player->team->id]) }}" class="text-decoration-none text-dark d-inline-flex align-items-center">
-                {{ $player->team->name }}
-                <img src="{{ asset('storage/' . $player->team->logo_path) }}" alt="{{ $player->team->name }}" style="height: 50px;" class="ms-2">
-                </a>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="{{ asset($player->img_path) }}" alt="{{ $player->name }}" class="rounded mb-3 img-fluid img300">
 
-            </div>
+            <h2 class="fw-bold">{{ $player->name }} #{{ $player->number }}</h2>
+            <a href="{{ route('team.show', ['id' => $player->team->id]) }}"
+                class="text-decoration-none text-dark d-inline-flex align-items-center">
+                <h3>{{ $player->team->name }}</h3>
+                <img src="{{ asset('storage/' . $player->team->logo_path) }}" alt="{{ $player->team->name }}"
+                    class="ms-2 img80">
+            </a>
 
-            <div class="col-md-8">
-    <h3 class="mb-4">Statistika</h3>
+        </div>
 
-    <table
-    class="table text-center align-middle border border-3 rounded overflow-hidden mb-0"
-    style="
+        <div class="col-md-8">
+            <h3 class="mb-4">Statistika</h3>
+
+            <table class="table text-center align-middle border border-3 rounded overflow-hidden mb-0" style="
         background-color: {{ $player->team->teamcolor }};
         color: {{ $player->team->teamsecondarycolor }};
         border-color: {{ $player->team->teamsecondarycolor }};
     ">
 
-    <tr>
-        <th style="background-color: inherit; color: inherit; border: none;">
-            <img src="/other/goal.png" alt="Gūtie vārti" style="height: 40px;" title="Vārti">
-        </th>
-        <th style="background-color: inherit; color: inherit; border: none;">
-            <img src="/other/assist.png" alt="Rezultatīvās piespēles" style="height: 40px;" title="Rez. piespēles">
-        </th>
-        <th style="background-color: inherit; color: inherit; border: none;">
-            <img src="/other/yellowcard.png" alt="Dzeltenās kartītes" style="height: 40px;" title="dzeltenās kartiņas">
-        </th>
-        <th style="background-color: inherit; color: inherit; border: none;">
-            <img src="/other/redcard.png" alt="Sarkanās kartītes" style="height: 40px;" title="sarkanās kartiņas">
-        </th>
-    </tr>
-    <tr>
-        <td style="background-color: inherit; color: inherit; border: none; font-weight: bold; font-size:20pt">{{ $goals }}</td>
-        <td style="background-color: inherit; color: inherit; border: none; font-weight: bold; font-size:20pt">{{ $assists }}</td>
-        <td style="background-color: inherit; color: inherit; border: none; font-weight: bold; font-size:20pt">{{ $yellowCards }}</td>
-        <td style="background-color: inherit; color: inherit; border: none; font-weight: bold; font-size:20pt">{{ $redCards }}</td>
-    </tr>
-</table>
+                <tr class="playertable">
+                    <th>
+                        <img src="/other/goal.png" alt="Gūtie vārti" class="img40" title="Vārti">
+                    </th>
+                    <th>
+                        <img src="/other/assist.png" alt="Rezultatīvās piespēles" class="img40" title="Rez. piespēles">
+                    </th>
+                    <th>
+                        <img src="/other/yellowcard.png" alt="Dzeltenās kartītes" class="img40"
+                            title="dzeltenās kartiņas">
+                    </th>
+                    <th>
+                        <img src="/other/redcard.png" alt="Sarkanās kartītes" class="img40" title="sarkanās kartiņas">
+                    </th>
+                </tr>
+                <tr class="playertable">
+                    <td>
+                        {{ $goals }}</td>
+                    <td>
+                        {{ $assists }}</td>
+                    <td>
+                        {{ $yellowCards }}</td>
+                    <td>
+                        {{ $redCards }}</td>
+                </tr>
+            </table>
 
-    
-</div>
-        </div>
-        <div class="row pt-5">
-            <h2>Citi {{ $player->team->name }} spēlētāji:</h2>
-            <div class="d-flex flex-wrap gap-4 mt-3">
-            @foreach($player->team->players->where('id', '!=', $player->id) as $teammate)
-            <div class="text-center" style="width: 100px;">
-            <a href="{{ route('player.show', $teammate->id) }}" class="text-decoration-none text-dark">
-                <img src="{{ asset('storage/' . $teammate->img_path) }}" alt="{{ $teammate->name }}" class="img-fluid mb-2" style="height: 100px; width: 100px; object-fit: cover;">
-                <div style="font-size: 0.9em;">{{ $teammate->name }}</div>
-            </a>
-            </div>
-             @endforeach
-            </div>
+
         </div>
     </div>
+    <div class="row pt-5">
+        <h2>Citi {{ $player->team->name }} spēlētāji:</h2>
+        <div class="d-flex flex-wrap gap-4 mt-3">
+            @foreach($player->team->players->where('id', '!=', $player->id) as $teammate)
+            <div class="text-center" class="img100">
+                <a href="{{ route('player.show', $teammate->id) }}" class="text-decoration-none text-dark">
+                    <img src="{{ asset('storage/' . $teammate->img_path) }}" alt="{{ $teammate->name }}"
+                        class="img-fluid mb-2 img100" >
+                    <p>{{ $teammate->name }}</p>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 
 
-    
+
 @endsection

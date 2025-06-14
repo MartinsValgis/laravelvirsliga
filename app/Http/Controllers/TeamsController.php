@@ -9,36 +9,32 @@ use Carbon\Carbon;
 
 class TeamsController extends Controller
 {
-    
-public function show($id)
-{
-   
-    $team = Teams::with('players')->findOrFail($id);
-    $teams = Teams::all();
 
-    // Šodienas datums
-    $today = Carbon::now();
+    public function show($id)
+    {
 
-    // Beigušās spēles
-    $pastMatches = Matches::where(function ($query) use ($id) {
-        $query->where('home_team_id', $id)
-              ->orWhere('away_team_id', $id);
-    })->where('date', '<', $today)
-      ->orderBy('date', 'desc')
-      ->get();
+        $team = Teams::with('players')->findOrFail($id);
+        $teams = Teams::all();
+        $today = Carbon::now();
 
-    // Nākamās spēles
-    $upcomingMatches = Matches::with(['homeTeam', 'awayTeam'])
-        ->where(function($query) use ($id) {
+        $pastMatches = Matches::where(function ($query) use ($id) {
             $query->where('home_team_id', $id)
-                  ->orWhere('away_team_id', $id);
-        })
-        ->where('date', '>=', now())
-        ->orderBy('date')
-        ->limit(3)
-        ->get();
+                ->orWhere('away_team_id', $id);
+        })->where('date', '<', $today)
+            ->orderBy('date', 'desc')
+            ->limit(5)
+            ->get();
 
-    return view('team', compact('team', 'teams', 'pastMatches', 'upcomingMatches'));
-}
+        $upcomingMatches = Matches::with(['homeTeam', 'awayTeam'])
+            ->where(function ($query) use ($id) {
+                $query->where('home_team_id', $id)
+                    ->orWhere('away_team_id', $id);
+            })
+            ->where('date', '>=', now())
+            ->orderBy('date')
+            ->limit(3)
+            ->get();
 
+        return view('team', compact('team', 'teams', 'pastMatches', 'upcomingMatches'));
+    }
 }

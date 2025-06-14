@@ -3,9 +3,94 @@
     border-color: #dc3545;
     color: #ffffff;
 }
-.pagination .page-link{
+
+.pagination .page-link {
     color: #dc3545;
 }
+
 .pagination .page-link:hover {
     color: #a71d2a;
+}
+
+.ucl {
+    font-weight: bold;
+    background-color: #39ff08 !important;
+}
+
+.konf {
+    font-weight: bold;
+    background-color: #3d72d4 !important;
+}
+
+.parsp {
+    font-weight: bold;
+    background-color: #d8b722 !important;
+}
+
+.releg {
+    font-weight: bold;
+    background-color: #f50b0b !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.kubs {
+    height: 20px;
+    width: 20px;
+}
+
+.matchhr {
+    width: 100%;
+    border-top: 2px solid #000000;
+}
+
+.minihr {
+    width: 30%;
+    border-top: 2px solid #a7a6a6;
+}
+
+.img40 {
+    height: 40px;
+}
+
+.img80 {
+    height: 80px;
+}
+
+.img20 {
+    height: 20px;
+}.img30 {
+    height: 30px;
+}
+
+.img100 {
+    height: 100px;
+}
+.img150 {
+    height: 150px;
+}
+
+.img300 {
+    height: 300px;
+}
+
+#minute {
+    width: 10%
+}
+
+.playertable th {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+}
+
+.playertable td {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    font-weight: bold;
+    font-size: 20pt;
+
 }

@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class cards extends Model
 {
-    public function player() {
-    return $this->belongsTo(Players::class);
+    public function player()
+    {
+        return $this->belongsTo(Players::class);
     }
 }
