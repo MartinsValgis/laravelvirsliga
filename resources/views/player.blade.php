@@ -1,5 +1,6 @@
 @extends('layout')
-
+@section('teamcolor', $player->team->teamcolor)
+@section('teamsecondarycolor', $player->team->teamsecondarycolor)
 @section('title', $player->name)
 
 <head>

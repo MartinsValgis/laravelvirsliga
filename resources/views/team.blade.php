@@ -1,5 +1,6 @@
 @extends('layout')
-
+@section('teamcolor', $team->teamcolor)
+@section('teamsecondarycolor', $team->teamsecondarycolor)
 @section('title', $team->name)
 
 <head>
@@ -14,8 +15,9 @@
                 <div class="card-body text-center">
                     <img src="{{ asset('storage/' . $team->logo_path) }}" alt="Logo" class="img-fluid img150">
                     <h1 class="card-title">{{ $team->name }}</h1>
-                    <p class="text-muted"><strong>Pilsēta:</strong> {{ $team->city }}</p>
-                    <p class="text-muted"><strong>Galvenais treneris:</strong> {{ $team->treneris }}</p>
+                    <p><strong>Pilsēta:</strong> {{ $team->city }}</p>
+                    <p><strong>Galvenais treneris:</strong> {{ $team->treneris }}</p>
+                    <p>{{ $position }}. vieta – {{ $teamPoints }} punkti</p>
                 </div>
             </div>
             <div class="card shadow-sm">
@@ -65,11 +67,15 @@
                                     <img src="{{ asset('other/away.png') }}" alt="Izbraukuma spēle" class="img30">
                                     @endif
 
+
+                                    {{ $match->homeTeam->name }}
                                     <img src="{{ asset($match->homeTeam->logo_path) }}"
                                         alt="{{ $match->homeTeam->name }}" class="img40 mx-2">
-                                    {{ $match->homeTeam->name }} - {{ $match->awayTeam->name }}
+                                    -
                                     <img src="{{ asset($match->awayTeam->logo_path) }}"
                                         alt="{{ $match->awayTeam->name }}" class="img40 mx-2">
+                                    {{ $match->awayTeam->name }}
+
                                 </h2>
                                 <p class="mb-2 text-muted">
                                     {{ $match['matchweek'] }}. Kārta, {{ $match['stadium'] }}, {{
@@ -105,12 +111,15 @@
                                     @else
                                     <img src="{{ asset('other/away.png') }}" alt="Izbraukuma spēle" class="img30">
                                     @endif
+                                    {{ $match->homeTeam->name }}
                                     <img src="{{ asset($match->homeTeam->logo_path) }}"
                                         alt="{{ $match->homeTeam->name }}" class="img40 mx-2">
-                                    {{ $match->homeTeam->name }} {{ $match['homegoals'] }} - {{ $match['awaygoals'] }}
-                                    {{ $match->awayTeam->name }}
-                                    <img src="{{ asset($match->awayTeam->logo_path) }}"
+                                    {{ $match['homegoals'] }}-{{ $match['awaygoals'] }} <img
+                                        src="{{ asset($match->awayTeam->logo_path) }}"
                                         alt="{{ $match->awayTeam->name }}" class="img40 mx-2">
+
+                                    {{ $match->awayTeam->name }}
+
                                 </h2>
                                 <p class="mb-2 text-muted">
                                     {{ $match['matchweek'] }}. Kārta, {{ $match['stadium'] }}, {{

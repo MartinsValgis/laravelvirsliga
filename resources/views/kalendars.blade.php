@@ -6,6 +6,7 @@
 </head>
 @section('content')
 <div class="container my-5">
+    <h2 class="text-center">Spēļu kalendārs</h2>
     @forelse($groupedMatches as $date => $dayMatches)
     @if (!$loop->first)
     <hr class="matchhr">
@@ -15,15 +16,29 @@
     @foreach($dayMatches as $match)
     <a href="/match/{{ $match->id }}" class="text-decoration-none text-dark">
         <div class="text-center mb-4">
-            <h2 class="h5 fw-bold">
-                <img src="{{ asset($match->homeTeam->logo_path) }}" alt="{{ $match->homeTeam->name }}"
-                    class="mx-2 img40">
-                {{ $match->homeTeam->name }} {{ $match->homegoals }} - {{ $match->awaygoals }} {{ $match->awayTeam->name
-                }}
-                <img src="{{ asset($match->awayTeam->logo_path) }}" alt="{{ $match->awayTeam->name }}"
-                    class="mx-2 img40">
-            </h2>
-            <p class="mb-2 text-muted">
+            <div class="row justify-content-center align-items-center text-center">
+                <div class="col text-end">
+                    <h5>
+                        {{ $match->homeTeam->name }}
+                        <img src="{{ asset($match->homeTeam->logo_path) }}" alt="{{ $match->homeTeam->name }}"
+                            class="mx-2 img40">
+                        {{ $match->homegoals }}
+                    </h5>
+                </div>
+                <div class="col-auto p-0">
+                    <h5 class="mb-3">-</h5>
+                </div>
+                <div class="col text-start">
+                    <h5>
+                        {{ $match->awaygoals }}
+                        <img src="{{ asset($match->awayTeam->logo_path) }}" alt="{{ $match->awayTeam->name }}"
+                            class="mx-2 img40">
+                        {{ $match->awayTeam->name }}
+                    </h5>
+                </div>
+            </div>
+
+            <p class="mb-2">
                 {{ $match->matchweek }}. Kārta, {{ $match->stadium }}, {{
                 \Carbon\Carbon::parse($match->date)->format('H:i') }}
             </p>

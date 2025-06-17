@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="container my-5">
-    <h2 class="mb-4">Turnīra tabula</h2>
+    <h2 class="mb-4 text-center">Turnīra tabula</h2>
 
     <table class="table table-striped table-bordered text-center">
         <thead class="table-dark">
