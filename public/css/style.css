@@ -106,4 +106,7 @@
     color: #000000 !important;
 }.exp:hover{
     filter: drop-shadow(4px 4px 7px #222);
+}.flag {
+    height: 20px;
+    border: 2px solid #000000;
 }

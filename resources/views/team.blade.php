@@ -15,15 +15,15 @@
                 <div class="card-body text-center">
                     <img src="{{ asset('storage/' . $team->logo_path) }}" alt="Logo" class="img-fluid img150">
                     <h1 class="card-title">{{ $team->name }}</h1>
-                    <p><strong>Pilsēta:</strong> {{ $team->city }}</p>
-                    <p><strong>Galvenais treneris:</strong> {{ $team->treneris }}</p>
-                    <p>{{ $position }}. vieta – {{ $teamPoints }} punkti</p>
+                    <p><strong>{{__('messages.pilseta') }}:</strong> {{ $team->city }}</p>
+                    <p><strong>{{__('messages.treneris') }}:</strong> {{ $team->treneris }}</p>
+                    <p>{{ $position }}. {{__('messages.vieta') }} – {{ $teamPoints }} {{__('messages.punkti') }}</p>
                 </div>
             </div>
             <div class="card shadow-sm">
                 <div class="card-header"
                     style="background-color: {{ $team->teamcolor}}; color: {{ $team->teamsecondarycolor}};">
-                    <h3 class="mb-0">Spēlētāji</h3>
+                    <h3 class="mb-0">{{__('messages.speletajicapital') }}</h3>
                 </div>
                 <div class="card-body">
                     @forelse($team->players as $player)
@@ -40,7 +40,7 @@
                             </div>
                     </a>
                     @empty
-                    <p class="text-muted">Nav informācijas par spēlētājiem</p>
+                    <p class="text-muted">{{__('messages.navinfospeletaji') }}</p>
                     @endforelse
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="card mb-4 shadow-sm">
                 <div class="card-header"
                     style="background-color: {{ $team->teamcolor}}; color: {{ $team->teamsecondarycolor}};">
-                    <h3 class="mb-0">Nākamās 3 spēles</h3>
+                    <h3 class="mb-0">{{__('messages.nakamas3speles') }}</h3>
                 </div>
                 <div class="card-body">
                     @forelse($upcomingMatches as $match)
@@ -62,9 +62,9 @@
                                 @endif
                                 <h2 class="h5 fw-bold">
                                     @if($match->homeTeam->id === $team->id)
-                                    <img src="{{ asset('other/home.png') }}" alt="Mājas spēle" class="img30">
+                                    <img src="{{ asset('other/home.png') }}" alt="{{__('messages.majasspele') }}" title="{{__('messages.majasspele') }}" class="img30">
                                     @else
-                                    <img src="{{ asset('other/away.png') }}" alt="Izbraukuma spēle" class="img30">
+                                    <img src="{{ asset('other/away.png') }}" alt="{{__('messages.izbraukumaspele') }}" title="{{__('messages.izbraukumaspele') }}" class="img30">
                                     @endif
 
 
@@ -78,7 +78,7 @@
 
                                 </h2>
                                 <p class="mb-2 text-muted">
-                                    {{ $match['matchweek'] }}. Kārta, {{ $match['stadium'] }}, {{
+                                    {{ $match['matchweek'] }}. {{__('messages.karta') }}, {{ $match['stadium'] }}, {{
                                     \Carbon\Carbon::parse($match->date)->format('d.m, H:i') }}
                                 </p>
                                 @if($loop->first)
@@ -87,7 +87,7 @@
                             </div>
                     </a>
                     @empty
-                    <p class="text-muted">Nav plānoto spēļu.</p>
+                    <p class="text-muted">{{__('messages.navspeluplan') }}.</p>
                     @endforelse
                 </div>
             </div>
@@ -95,7 +95,7 @@
             <div class="card shadow-sm">
                 <div class="card-header"
                     style="background-color: {{ $team->teamcolor}}; color: {{ $team->teamsecondarycolor}};">
-                    <h3 class="mb-0">Pēdējās 5 spēles</h3>
+                    <h3 class="mb-0">{{__('messages.pedejas5speles') }}</h3>
                 </div>
                 <div class="card-body">
                     @forelse($pastMatches as $match)
@@ -107,9 +107,9 @@
                                 @endif
                                 <h2 class="h5 fw-bold">
                                     @if($match->homeTeam->id === $team->id)
-                                    <img src="{{ asset('other/home.png') }}" alt="Mājas spēle" class="img30">
+                                    <img src="{{ asset('other/home.png') }}" alt="{{__('messages.majasspele') }}" title="{{__('messages.majasspele') }}" class="img30">
                                     @else
-                                    <img src="{{ asset('other/away.png') }}" alt="Izbraukuma spēle" class="img30">
+                                    <img src="{{ asset('other/away.png') }}" alt="{{__('messages.izbraukumaspele') }}" title="{{__('messages.izbraukumaspele') }}" class="img30">
                                     @endif
                                     {{ $match->homeTeam->name }}
                                     <img src="{{ asset($match->homeTeam->logo_path) }}"
@@ -122,13 +122,13 @@
 
                                 </h2>
                                 <p class="mb-2 text-muted">
-                                    {{ $match['matchweek'] }}. Kārta, {{ $match['stadium'] }}, {{
+                                    {{ $match['matchweek'] }}. {{__('messages.karta') }}, {{ $match['stadium'] }}, {{
                                     \Carbon\Carbon::parse($match->date)->format('d.m, H:i') }}
                                 </p>
                             </div>
                     </a>
                     @empty
-                    <p class="text-muted">Nav beigušos spēļu.</p>
+                    <p class="text-muted">{{__('messages.navspelesbeigusas') }}.</p>
                     @endforelse
                 </div>
             </div>

@@ -26,7 +26,7 @@
         </div>
 
         <div class="col-md-8">
-            <h3 class="mb-4">Statistika</h3>
+            <h3 class="mb-4">{{__('messages.statistika') }}</h3>
 
             <table class="table text-center align-middle border border-3 rounded overflow-hidden mb-0" style="
         background-color: {{ $player->team->teamcolor }};
@@ -36,17 +36,17 @@
 
                 <tr class="playertable">
                     <th>
-                        <img src="/other/goal.png" alt="Gūtie vārti" class="img40" title="Vārti">
+                        <img src="/other/goal.png" alt="{{__('messages.vartivairaki') }}" class="img40" title="{{__('messages.vartivairaki') }}">
                     </th>
                     <th>
-                        <img src="/other/assist.png" alt="Rezultatīvās piespēles" class="img40" title="Rez. piespēles">
+                        <img src="/other/assist.png" alt="{{__('messages.piespeles') }}" class="img40" title="{{__('messages.piespeles') }}">
                     </th>
                     <th>
-                        <img src="/other/yellowcard.png" alt="Dzeltenās kartītes" class="img40"
-                            title="dzeltenās kartiņas">
+                        <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenaskartinas') }}" class="img40"
+                            title="{{__('messages.dzeltenaskartinas') }}">
                     </th>
                     <th>
-                        <img src="/other/redcard.png" alt="Sarkanās kartītes" class="img40" title="sarkanās kartiņas">
+                        <img src="/other/redcard.png" alt="{{__('messages.sarkanaskartinas') }}" class="img40" title="{{__('messages.sarkanaskartinas') }}">
                     </th>
                 </tr>
                 <tr class="playertable">
@@ -65,7 +65,7 @@
         </div>
     </div>
     <div class="row pt-5">
-        <h2>Citi {{ $player->team->name }} spēlētāji:</h2>
+        <h2>{{__('messages.citi') }} {{ $player->team->name }} {{__('messages.speletaji') }}:</h2>
         <div class="d-flex flex-wrap gap-4 mt-3">
             @foreach($player->team->players->where('id', '!=', $player->id) as $teammate)
             <div class="text-center" class="img100">

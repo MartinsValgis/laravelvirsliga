@@ -27,7 +27,6 @@ class MatchesController extends Controller
         $today = Carbon::now();
         $teams = Teams::all();
 
-        // Turnīra tabulas aprēķins
         $table = $teams->map(function ($t) use ($today) {
             $homeMatches = $t->homeMatches()->where('date', '<=', $today)->get();
             $awayMatches = $t->awayMatches()->where('date', '<=', $today)->get();
@@ -71,7 +70,6 @@ class MatchesController extends Controller
         $homePosition = $sorted->search(fn($entry) => $entry->team_id === $homeTeam->id) + 1;
         $awayPosition = $sorted->search(fn($entry) => $entry->team_id === $awayTeam->id) + 1;
 
-        // Pēdējās 5 spēles katrai komandai
         $getLast5Results = function ($team) use ($today) {
             $matches = Matches::where(function ($q) use ($team) {
                 $q->where('home_team_id', $team->id)->orWhere('away_team_id', $team->id);
@@ -98,7 +96,6 @@ class MatchesController extends Controller
         $homeRecentForm = $getLast5Results($homeTeam);
         $awayRecentForm = $getLast5Results($awayTeam);
 
-        // Referee un events loģika saglabājas kā ir
         $referee = Referees::find($match->referee_id);
         $refereeMatches = Matches::where('referee_id', $match->referee_id)->get();
         $refereeMatchIds = $refereeMatches->pluck('id');

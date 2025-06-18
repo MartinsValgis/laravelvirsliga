@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Turnīra tabula')
+@section('title', __('messages.tabula'))
 
 <head>
     <link rel="icon" type="image/png" href="{{ asset('storage/other/logofavicon.png') }}">
@@ -7,21 +7,21 @@
 
 @section('content')
 <div class="container my-5">
-    <h2 class="mb-4 text-center">Turnīra tabula</h2>
+    <h2 class="mb-4 text-center">{{__('messages.tabula') }}</h2>
 
     <table class="table table-striped table-bordered text-center">
         <thead class="table-dark">
             <tr>
-                <th>Vieta</th>
-                <th>Komanda</th>
-                <th>Spēles</th>
-                <th>Uzvaras</th>
-                <th>Neizšķirti</th>
-                <th>Zaudējumi</th>
-                <th>Gūtie</th>
-                <th>Ielaistie</th>
-                <th>Attiecība</th>
-                <th>Punkti</th>
+                <th>{{__('messages.vieta') }}</th>
+                <th>{{__('messages.komanda') }}</th>
+                <th>{{__('messages.speles') }}</th>
+                <th>{{__('messages.uzvaras') }}</th>
+                <th>{{__('messages.neizskirti') }}</th>
+                <th>{{__('messages.zaudejumi') }}</th>
+                <th>{{__('messages.gutievarti') }}</th>
+                <th>{{__('messages.ielaistievarti') }}</th>
+                <th>{{__('messages.vartuattieciba') }}</th>
+                <th>{{__('messages.punkti') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -52,22 +52,22 @@
 
     <div class="d-flex align-items-center mb-2">
         <div class="kubs ucl me-2"></div>
-        <p class="mb-0">- Vieta UEFA Čempionu līgas kvalifikācijā</p>
+        <p class="mb-0">- {{__('messages.ucl') }}</p>
     </div>
 
     <div class="d-flex align-items-center mb-2">
         <div class="kubs konf me-2"></div>
-        <p class="mb-0">- Vieta UEFA Konferences līgas kvalifikācijā</p>
+        <p class="mb-0">- {{__('messages.konf') }}</p>
     </div>
 
     <div class="d-flex align-items-center mb-2">
         <div class="kubs parsp me-2"></div>
-        <p class="mb-0">- Vieta virslīgas pārspēlēs</p>
+        <p class="mb-0">- {{__('messages.parsp') }}</p>
     </div>
 
     <div class="d-flex align-items-center mb-2">
         <div class="kubs releg me-2"></div>
-        <p class="mb-0">- Automātiska izkrišana no virslīgas</p>
+        <p class="mb-0">- {{__('messages.releg') }}</p>
     </div>
 
 </div>

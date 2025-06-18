@@ -1,12 +1,12 @@
 @extends('layout')
-@section('title', 'Spēļu kalendārs')
+@section('title', __('messages.kalendars') )
 
 <head>
     <link rel="icon" type="image/png" href="{{ asset('storage/other/logofavicon.png') }}">
 </head>
 @section('content')
 <div class="container my-5">
-    <h2 class="text-center">Spēļu kalendārs</h2>
+    <h2 class="text-center">{{__('messages.kalendars') }}</h2>
     @forelse($groupedMatches as $date => $dayMatches)
     @if (!$loop->first)
     <hr class="matchhr">
@@ -39,7 +39,7 @@
             </div>
 
             <p class="mb-2">
-                {{ $match->matchweek }}. Kārta, {{ $match->stadium }}, {{
+                {{ $match->matchweek }}. {{__('messages.karta') }}, {{ $match->stadium }}, {{
                 \Carbon\Carbon::parse($match->date)->format('H:i') }}
             </p>
             @if (!$loop->last)
@@ -49,7 +49,7 @@
     </a>
     @endforeach
     @empty
-    <p class="text-muted">Nav spēļu.</p>
+    <p class="text-muted">{{__('messages.navspelu') }}</p>
     @endforelse
 
     <div class="d-flex flex-column mt-4">

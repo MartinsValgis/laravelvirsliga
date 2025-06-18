@@ -19,7 +19,7 @@
     <div style="background-color: {{ $headerColor }};" class="py-3">
         <div>
             <a href="/">
-                <svg width="111" height="54" class="mx-4 m-4 position-fixed" viewBox="0 0 74 36" fill="{{ $bColor }}"
+                <svg width="111" height="54" class="mx-4 m-4 position-absolute" viewBox="0 0 74 36" fill="{{ $bColor }}"
                     xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#a)" fill="{{ $bColor }}">
                         <path
@@ -44,12 +44,24 @@
                 @endforeach
             </div>
             <div class="d-flex justify-content-center gap-3">
-                <a href="/" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">Kalendārs</a>
-                <a href="/table" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">Turnīra tabula</a>
-                <a href="/favorite" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">Izlase</a>
-                <a href="/konts" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">Konts</a>
+                <a href="/" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.kalendars') }}</a>
+                <a href="/table" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.tabula') }}</a>
+                <a href="/favorite" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.izlase') }}</a>
+                <a href="/konts" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.konts') }}</a>
             </div>
         </div>
+        <div class="language-switcher position-absolute top-0 end-0 mt-5 me-3 d-flex gap-4">
+            <a href="{{ route('setLocale', ['lang' => 'lv']) }}">
+                <img class="flag" src="/other/latvian.png" alt="LV">
+            </a>
+            <a href="{{ route('setLocale', ['lang' => 'en']) }}">
+                <img class="flag" src="/other/english.png" alt="EN">
+            </a>
+            <a href="{{ route('setLocale', ['lang' => 'de']) }}">
+                <img class="flag" src="/other/german.png" alt="DE">
+            </a>
+        </div>
+
     </div>
 
 

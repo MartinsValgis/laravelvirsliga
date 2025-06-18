@@ -44,8 +44,8 @@ $match->awayTeam->name)
     <div class="row mb-3">
 
         <div class="col-md-6 text-end pe-5">
-            <h5>{{ $homePosition }}. vieta</h5>
-            <p class="mb-0">Pēdējie 5 rezultāti:</p>
+            <h5>{{ $homePosition }}. {{__('messages.vieta') }}</h5>
+            <p class="mb-0">{{__('messages.ped5') }}:</p>
             <div class="d-flex gap-2 justify-content-end">
                 @foreach($homeRecentForm as $symbol)
                 <div @class([ 'ucl'=> $symbol == 'W',
@@ -61,8 +61,8 @@ $match->awayTeam->name)
         </div>
 
         <div class="col-md-6 text-start ps-5">
-            <h5>{{ $awayPosition }}. vieta</h5>
-            <p class="mb-0">Pēdējie 5 rezultāti:</p>
+            <h5>{{ $awayPosition }}. {{__('messages.vieta') }}</h5>
+            <p class="mb-0">{{__('messages.ped5') }}:</p>
             <div class="d-flex gap-2 justify-content-start">
                 @foreach($awayRecentForm as $symbol)
                 <div @class([ 'ucl'=> $symbol == 'W',
@@ -80,21 +80,21 @@ $match->awayTeam->name)
     @endif
 
 
-    <p class="text-center">{{ $match->matchweek }}. kārta, {{ $match->stadium }} – {{
+    <p class="text-center">{{ $match->matchweek }}. {{__('messages.karta') }}, {{ $match->stadium }} – {{
         \Carbon\Carbon::parse($match->date)->format('d.m, H:i') }}</p>
     @if($referee)
     <p class="text-center">
-        <strong>Galvenais tiesnesis: {{ $referee->name }}</strong><br>
-        Vidēji kartītes: <img src="/other/yellowcard.png" alt="dzeltena kartiņa" class="img20 ps-3"
-            title="dzeltena kartiņa"> {{ $avgYellowCards}}
-        <img src="/other/redcard.png" alt="sarkana kartiņa" class="img20 ps-3" title="sarkana kartiņa"> {{
+        <strong>{{__('messages.tiesnesis') }}: {{ $referee->name }}</strong><br>
+        {{__('messages.kartites') }}: <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenaskartinas') }}" class="img20 ps-3"
+            title="{{__('messages.dzeltenaskartinas') }}"> {{ $avgYellowCards}}
+        <img src="/other/redcard.png" alt="{{__('messages.sarkanaskartinas') }}" class="img20 ps-3" title="{{__('messages.sarkanaskartinas') }}"> {{
         $avgRedCards}}
     </p>
     @endif
 
     <hr>
 
-    <h4>Spēles notikumi:</h4>
+    <h4>{{__('messages.notikumi') }}:</h4>
     @forelse($events as $event)
     <div class="d-flex justify-content-center align-items-center text-center">
         <div class="col-4 text-end">
@@ -103,20 +103,20 @@ $match->awayTeam->name)
                 <a href="{{ route('player.show', $event->player->id) }}"
                     class="text-decoration-none text-dark"><strong>{{ $event->player->name }}</strong></a>
                 @if($event->type === 'goal')
-                <img src="/other/goal.png" alt="Vārti" class="img20" title="Vārti">
+                <img src="/other/goal.png" alt="{{__('messages.varti') }}" class="img20" title="{{__('messages.varti') }}">
                 @if($event->assist)
                 <br>
                 <span>(</span>
-                <img src="/other/assist.png" alt="Rezultatīvā piespēle" class="img20" title="Rezultatīvā piespēle">
+                <img src="/other/assist.png" alt="{{__('messages.piespele') }}" class="img20" title="{{__('messages.piespele') }}">
                 <a href="{{ route('player.show', $event->assist->id) }}" class="text-decoration-none text-dark"><span>
                         {{$event->assist->name }})</span></a>
                 @endif
                 @elseif($event->type === 'own_goal')
-                <img src="/other/owngoal.png" alt="Savos vārtos" class="img20" title="Savos vārtos">
+                <img src="/other/owngoal.png" alt="{{__('messages.owngoal') }}" class="img20" title="{{__('messages.owngoal') }}">
                 @elseif($event->type === 'yellow')
-                <img src="/other/yellowcard.png" alt="dzeltena kartiņa" class="img20" title="dzeltena kartiņa">
+                <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenakartina') }}" class="img20" title="{{__('messages.dzeltenakartina') }}">
                 @elseif($event->type === 'red')
-                <img src="/other/redcard.png" alt="sarkana kartiņa" class="img20" title="sarkana kartiņa">
+                <img src="/other/redcard.png" alt="{{__('messages.sarkanakartina') }}" class="img20" title="{{__('messages.sarkanakartina') }}">
                 @endif
             </div>
             @endif
@@ -130,20 +130,20 @@ $match->awayTeam->name)
             @if($event->team_id === $match->awayTeam->id)
             <span>
                 @if($event->type === 'goal')
-                <img src="/other/goal.png" alt="Vārti" class="img20" title="Vārti">
+                <img src="/other/goal.png" alt="{{__('messages.varti') }}" class="img20" title="{{__('messages.varti') }}">
                 @elseif($event->type === 'own_goal')
-                <img src="/other/owngoal.png" alt="Savos vārtos" class="img20" title="Savos vārtos">
+                <img src="/other/owngoal.png" alt="{{__('messages.owngoal') }}" class="img20" title="{{__('messages.owngoal') }}">
                 @elseif($event->type === 'yellow')
-                <img src="/other/yellowcard.png" alt="dzeltena kartiņa" class="img20" title="dzeltena kartiņa">
+                <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenakartina') }}" class="img20" title="{{__('messages.dzeltenakartina') }}">
                 @elseif($event->type === 'red')
-                <img src="/other/redcard.png" alt="sarkana kartiņa" class="img20" title="sarkana kartiņa">
+                <img src="/other/redcard.png" alt="{{__('messages.sarkanakartina') }}" class="img20" title="{{__('messages.sarkanakartina') }}">
                 @endif
                 <a href="{{ route('player.show', $event->player->id) }}"
                     class="text-decoration-none text-dark"><strong>{{ $event->player->name }}</strong></a>
                 @if($event->type === 'goal' && isset($event->assist))
                 <br>
                 <span>(</span>
-                <img src="/other/assist.png" alt="Rezultatīvā piespēle" class="img20" title="Rezultatīvā piespēle">
+                <img src="/other/assist.png" alt="{{__('messages.piespele') }}" class="img20" title="{{__('messages.piespele') }}">
                 <a href="{{ route('player.show', $event->assist->id) }}" class="text-decoration-none text-dark"><span>{{
                         $event->assist->name }})</span></a>
                 @endif
@@ -153,9 +153,9 @@ $match->awayTeam->name)
     </div>
     @empty
     @if(\Carbon\Carbon::parse($match->date)->isFuture())
-    <p class="text-muted">Šis mačs vēl nav sācies</p>
+    <p class="text-muted">{{__('messages.navsacies') }}</p>
     @else
-    <p class="text-muted">Nav informācijas par šī mača notikumiem</p>
+    <p class="text-muted">{{__('messages.navinfo') }}</p>
     @endif
     @endforelse
 

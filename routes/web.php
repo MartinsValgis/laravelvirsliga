@@ -12,3 +12,12 @@ Route::get('/team/{id}/', [TeamsController::class, 'show'])->name('team.show');
 Route::get('/player/{id}', [PlayersController::class, 'show'])->name('player.show');
 Route::get('/match/{id}', [MatchesController::class, 'show']);
 Route::get('/table', [TableController::class, 'index']);
+Route::get('/locale/{lang}', function ($lang) {
+    $availableLocales = ['lv', 'en', 'de'];
+
+    if (in_array($lang, $availableLocales)) {
+        session(['locale' => $lang]);
+    }
+
+    return redirect()->back();
+})->name('setLocale');
