@@ -46,8 +46,8 @@
             <div class="d-flex justify-content-center gap-3">
                 <a href="/" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.kalendars') }}</a>
                 <a href="/table" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.tabula') }}</a>
-                <a href="/favorite" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.izlase') }}</a>
-                <a href="/konts" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.konts') }}</a>
+                <a href="/favorites" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.izlase') }}</a>
+                <a href="/profile" class="btn" style="color: {{ $bColor }}; border-color:{{ $bColor }}">{{__('messages.konts') }}</a>
             </div>
         </div>
         <div class="language-switcher position-absolute top-0 end-0 mt-5 me-3 d-flex gap-4">

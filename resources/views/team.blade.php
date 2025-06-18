@@ -14,7 +14,18 @@
             <div class="card mb-4 shadow-sm">
                 <div class="card-body text-center">
                     <img src="{{ asset('storage/' . $team->logo_path) }}" alt="Logo" class="img-fluid img150">
-                    <h1 class="card-title">{{ $team->name }}</h1>
+                    <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
+                        @auth
+                        <form class="mb-1" method="POST" action="{{ route('favorites.team.toggle', ['team' => $team->id]) }} ">
+                            @csrf
+                            <button type="submit" style="background: none; border: none; padding: 0; margin:0;">
+                                <img src="{{ auth()->user()->favoriteTeams->contains($team->id) ? asset('/other/star.png') : asset('/other/nostar.png') }}"
+                                    alt="favorite" class="img30 mb-0 zvaigzne">
+                            </button>
+                        </form>
+                        @endauth
+                        <h1 class="card-title">{{ $team->name }}</h1>
+                    </div>
                     <p><strong>{{__('messages.pilseta') }}:</strong> {{ $team->city }}</p>
                     <p><strong>{{__('messages.treneris') }}:</strong> {{ $team->treneris }}</p>
                     <p>{{ $position }}. {{__('messages.vieta') }} – {{ $teamPoints }} {{__('messages.punkti') }}</p>
@@ -60,30 +71,43 @@
                             @elseif($loop->last)
                             <div class="text-center mb-4 p-3 rounded">
                                 @endif
-                                <h2 class="h5 fw-bold">
-                                    @if($match->homeTeam->id === $team->id)
-                                    <img src="{{ asset('other/home.png') }}" alt="{{__('messages.majasspele') }}" title="{{__('messages.majasspele') }}" class="img30">
-                                    @else
-                                    <img src="{{ asset('other/away.png') }}" alt="{{__('messages.izbraukumaspele') }}" title="{{__('messages.izbraukumaspele') }}" class="img30">
-                                    @endif
+                                <div class="row justify-content-center align-items-center text-center">
+                                    <div class="col text-end ps-0">
+                                        <h5 class="fw-bold">
+                                            @if($match->homeTeam->id === $team->id)
+                                            <img src="{{ asset('other/home.png') }}"
+                                                alt="{{__('messages.majasspele') }}"
+                                                title="{{__('messages.majasspele') }}" class="img30">
+                                            @else
+                                            <img src="{{ asset('other/away.png') }}"
+                                                alt="{{__('messages.izbraukumaspele') }}"
+                                                title="{{__('messages.izbraukumaspele') }}" class="img30">
+                                            @endif
 
 
-                                    {{ $match->homeTeam->name }}
-                                    <img src="{{ asset($match->homeTeam->logo_path) }}"
-                                        alt="{{ $match->homeTeam->name }}" class="img40 mx-2">
-                                    -
-                                    <img src="{{ asset($match->awayTeam->logo_path) }}"
-                                        alt="{{ $match->awayTeam->name }}" class="img40 mx-2">
-                                    {{ $match->awayTeam->name }}
+                                            {{ $match->homeTeam->name }}
+                                            <img src="{{ asset($match->homeTeam->logo_path) }}"
+                                                alt="{{ $match->homeTeam->name }}" class="img40 mx-2">
+                                        </h5>
+                                    </div>
+                                    <div class="col-auto p-0">
+                                        <h5 class="mb-3">-</h5>
+                                    </div>
+                                    <div class="col text-start pe-0">
+                                        <h5 class="fw-bold">
+                                            <img src="{{ asset($match->awayTeam->logo_path) }}"
+                                                alt="{{ $match->awayTeam->name }}" class="img40 mx-2">
+                                            {{ $match->awayTeam->name }}
 
-                                </h2>
-                                <p class="mb-2 text-muted">
-                                    {{ $match['matchweek'] }}. {{__('messages.karta') }}, {{ $match['stadium'] }}, {{
-                                    \Carbon\Carbon::parse($match->date)->format('d.m, H:i') }}
-                                </p>
-                                @if($loop->first)
-                                <div class="countdown" data-end-time="{{ $match->date }}"></div>
-                                @endif
+                                        </h5>
+                                    </div>
+                                    <p class="mb-2 text-muted">
+                                        {{ $match['matchweek'] }}. {{__('messages.karta') }}, {{
+                                        $match['stadium'] }}, {{
+                                        \Carbon\Carbon::parse($match->date)->format('d.m, H:i') }}
+                                    </p>
+
+                                </div>
                             </div>
                     </a>
                     @empty
@@ -105,26 +129,43 @@
                             @elseif($loop->last)
                             <div class="text-center mb-4 p-3 rounded">
                                 @endif
-                                <h2 class="h5 fw-bold">
-                                    @if($match->homeTeam->id === $team->id)
-                                    <img src="{{ asset('other/home.png') }}" alt="{{__('messages.majasspele') }}" title="{{__('messages.majasspele') }}" class="img30">
-                                    @else
-                                    <img src="{{ asset('other/away.png') }}" alt="{{__('messages.izbraukumaspele') }}" title="{{__('messages.izbraukumaspele') }}" class="img30">
-                                    @endif
-                                    {{ $match->homeTeam->name }}
-                                    <img src="{{ asset($match->homeTeam->logo_path) }}"
-                                        alt="{{ $match->homeTeam->name }}" class="img40 mx-2">
-                                    {{ $match['homegoals'] }}-{{ $match['awaygoals'] }} <img
-                                        src="{{ asset($match->awayTeam->logo_path) }}"
-                                        alt="{{ $match->awayTeam->name }}" class="img40 mx-2">
+                                <div class="row justify-content-center align-items-center text-center">
+                                    <div class="col text-end ps-0">
+                                        <h5 class="fw-bold">
+                                            @if($match->homeTeam->id === $team->id)
+                                            <img src="{{ asset('other/home.png') }}"
+                                                alt="{{__('messages.majasspele') }}"
+                                                title="{{__('messages.majasspele') }}" class="img30">
+                                            @else
+                                            <img src="{{ asset('other/away.png') }}"
+                                                alt="{{__('messages.izbraukumaspele') }}"
+                                                title="{{__('messages.izbraukumaspele') }}" class="img30">
+                                            @endif
+                                            {{ $match->homeTeam->name }}
+                                            <img src="{{ asset($match->homeTeam->logo_path) }}"
+                                                alt="{{ $match->homeTeam->name }}" class="img40 mx-2">
+                                            {{ $match['homegoals'] }}
+                                            <h5>
+                                    </div>
+                                    <div class="col-auto">
+                                        <h5 class="mb-3 fw-bold">-</h5>
+                                    </div>
+                                    <div class="col text-start pe-0">
+                                        <h5 class="fw-bold">
+                                            {{ $match['awaygoals'] }} <img
+                                                src="{{ asset($match->awayTeam->logo_path) }}"
+                                                alt="{{ $match->awayTeam->name }}" class="img40 mx-2">
 
-                                    {{ $match->awayTeam->name }}
+                                            {{ $match->awayTeam->name }}
 
-                                </h2>
-                                <p class="mb-2 text-muted">
-                                    {{ $match['matchweek'] }}. {{__('messages.karta') }}, {{ $match['stadium'] }}, {{
-                                    \Carbon\Carbon::parse($match->date)->format('d.m, H:i') }}
-                                </p>
+                                        </h5>
+                                    </div>
+                                    <p class="mb-2 text-muted">
+                                        {{ $match['matchweek'] }}. {{__('messages.karta') }}, {{ $match['stadium'] }},
+                                        {{
+                                        \Carbon\Carbon::parse($match->date)->format('d.m, H:i') }}
+                                    </p>
+                                </div>
                             </div>
                     </a>
                     @empty

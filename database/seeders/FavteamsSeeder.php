@@ -15,7 +15,7 @@ class FavteamsSeeder extends Seeder
         
         \App\Models\favorite_teams::create([
         'user_id' => '1',
-        'team_id' => '2',
+        'team_id' => '6',
     ]);
     }
 }

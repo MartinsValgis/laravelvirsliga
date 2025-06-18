@@ -49,4 +49,15 @@ return [
     'piespele' => 'Assist',
     'piespeles' => 'Assists',
     'owngoal' => 'Own goal',
+
+    'email' => 'Email',
+    'password' => 'Password',
+    'remember' => 'Remember me',
+    'navaccount' => 'Dont have an account?',
+    'forgotpassword' => 'Forgot your password?',
+    'login' => 'Login',
+    'name' => 'Name',
+    'confpassword' => 'Confirm password',
+    'irkonts' => 'Already have an account?',
+    'register' => 'Register',
 ];

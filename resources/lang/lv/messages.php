@@ -3,7 +3,7 @@
 return [
     'kalendars' => 'Spēļu kalendārs',
     'tabula' => 'Turnīra tabula',
-    'izlase' => 'Izlase',
+    'izlase' => 'Favorīti',
     'konts' => 'Konts',
     'karta' => 'Kārta',
     'navspelu' => 'Nav spēļu',
@@ -49,5 +49,20 @@ return [
     'piespele' => 'Rezultatīvā piespēle',
     'piespeles' => 'Rezultatīvās piespēles',
     'owngoal' => 'Savos vārtos',
+
+    'email' => 'E-pasts',
+    'password' => 'Parole',
+    'remember' => 'Atcerēties mani',
+    'navaccount' => 'Nav konta?',
+    'forgotpassword' => 'Aizmirsi paroli?',
+    'login' => 'Pierakstīties',
+    'name' => 'Vārds',
+    'confpassword' => 'Apstiprināt paroli',
+    'irkonts' => 'Jau ir konts?',
+    'register' => 'Reģistrēties',
+    'paroleforgot' => 'Paroles atjaunošana',
+    'logins' => 'Pierakstīšanās',
+    'registers' => 'Reģistrēšanās',
+
 
 ];

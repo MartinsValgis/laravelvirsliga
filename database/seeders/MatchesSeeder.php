@@ -22,6 +22,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '1',
         'awaygoals' => '2',
         'stadium' => 'Mežaparks SV',
+        'info' => '1',
     ]);
         \App\Models\matches::create([
         'home_team_id' => '1',
@@ -32,6 +33,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '2',
         'awaygoals' => '0',
         'stadium' => 'Mežaparks SV',
+        'info' => '1',
     ]);
         \App\Models\matches::create([
         'home_team_id' => '5',
@@ -42,6 +44,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '1',
         'awaygoals' => '1',
         'stadium' => 'Stadions "Daugava", rezerves laukums',
+        'info' => '1',
     ]);
         \App\Models\matches::create([
         'home_team_id' => '4',
@@ -52,6 +55,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '3',
         'awaygoals' => '0',
         'stadium' => 'Stadions "Esplanāde", mākslīgais laukums',
+        'info' => '1',
     ]);
         \App\Models\matches::create([
         'home_team_id' => '7',
@@ -62,6 +66,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '4',
         'awaygoals' => '0',
         'stadium' => 'Stadions "Daugava", rezerves laukums',
+        'info' => '1',
     ]);
     //2. karta
         \App\Models\matches::create([
@@ -73,6 +78,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '2',
         'awaygoals' => '2',
         'stadium' => 'Mežaparks SV',
+        'info' => '1',
     ]);
         \App\Models\matches::create([
         'home_team_id' => '5',
@@ -83,6 +89,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '3',
         'awaygoals' => '2',
         'stadium' => 'Stadions "Daugava", rezerves laukums',
+        'info' => '1',
     ]);
         \App\Models\matches::create([
         'home_team_id' => '2',
@@ -93,6 +100,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '1',
         'awaygoals' => '0',
         'stadium' => 'LNK Sporta Parks (mākslīgais)',
+        'info' => '1',
     ]);
         \App\Models\matches::create([
         'home_team_id' => '7',
@@ -103,6 +111,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '0',
         'awaygoals' => '0',
         'stadium' => 'Stadions "Daugava", rezerves laukums',
+        'info' => '1',
     ]);
         \App\Models\matches::create([
         'home_team_id' => '9',
@@ -113,6 +122,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '4',
         'awaygoals' => '0',
         'stadium' => 'LNK Sporta Parks (mākslīgais)',
+        'info' => '1',
     ]);
     //3. karta
         \App\Models\matches::create([
@@ -124,6 +134,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '1',
         'awaygoals' => '1',
         'stadium' => 'FK Jelgava Sporta bāzes mākslīgais laukums',
+        'info' => '1',
     ]);\App\Models\matches::create([
         'home_team_id' => '4',
         'away_team_id' => '2',
@@ -133,6 +144,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '1',
         'awaygoals' => '2',
         'stadium' => 'Stadions "Esplanāde", mākslīgais laukums',
+        'info' => '1',
     ]);\App\Models\matches::create([
         'home_team_id' => '8',
         'away_team_id' => '10',
@@ -142,6 +154,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '3',
         'awaygoals' => '2',
         'stadium' => 'Rīgas Hanzas vidusskolas futbola laukums',
+        'info' => '1',
     ]);\App\Models\matches::create([
         'home_team_id' => '3',
         'away_team_id' => '9',
@@ -151,6 +164,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '1',
         'awaygoals' => '0',
         'stadium' => 'Mežaparks SV',
+        'info' => '1',
     ]);\App\Models\matches::create([
         'home_team_id' => '7',
         'away_team_id' => '5',
@@ -160,6 +174,7 @@ class MatchesSeeder extends Seeder
         'homegoals' => '4',
         'awaygoals' => '1',
         'stadium' => 'Stadions "Daugava", rezerves laukums',
+        'info' => '1',
     ]);
     //4.karta
         \App\Models\matches::create([

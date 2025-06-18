@@ -8,7 +8,17 @@ $match->awayTeam->name)
 </head>
 @section('content')
 <div class="container my-5">
-
+    
+    @auth
+    <form class="mb-1" method="POST" action="{{ route('favorites.match.toggle', $match->id) }}">
+        @csrf
+        <button type="submit" style="background: none; border: none; padding: 0; margin:0;">
+            <img src="{{ auth()->user()->favoriteMatches->contains($match->id) ? asset('/other/star.png') : asset('/other/nostar.png') }}"
+                alt="favorite" class="img30 mb-0 zvaigzne">
+        </button>
+    </form>
+    @endauth
+    
     <div class="row justify-content-center align-items-center text-center">
 
         <div class="col text-end">
@@ -82,12 +92,14 @@ $match->awayTeam->name)
 
     <p class="text-center">{{ $match->matchweek }}. {{__('messages.karta') }}, {{ $match->stadium }} – {{
         \Carbon\Carbon::parse($match->date)->format('d.m, H:i') }}</p>
+    {{-- Laikapstaklis --}}
     @if($referee)
     <p class="text-center">
         <strong>{{__('messages.tiesnesis') }}: {{ $referee->name }}</strong><br>
-        {{__('messages.kartites') }}: <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenaskartinas') }}" class="img20 ps-3"
-            title="{{__('messages.dzeltenaskartinas') }}"> {{ $avgYellowCards}}
-        <img src="/other/redcard.png" alt="{{__('messages.sarkanaskartinas') }}" class="img20 ps-3" title="{{__('messages.sarkanaskartinas') }}"> {{
+        {{__('messages.kartites') }}: <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenaskartinas') }}"
+            class="img20 ps-3" title="{{__('messages.dzeltenaskartinas') }}"> {{ $avgYellowCards}}
+        <img src="/other/redcard.png" alt="{{__('messages.sarkanaskartinas') }}" class="img20 ps-3"
+            title="{{__('messages.sarkanaskartinas') }}"> {{
         $avgRedCards}}
     </p>
     @endif
@@ -103,20 +115,25 @@ $match->awayTeam->name)
                 <a href="{{ route('player.show', $event->player->id) }}"
                     class="text-decoration-none text-dark"><strong>{{ $event->player->name }}</strong></a>
                 @if($event->type === 'goal')
-                <img src="/other/goal.png" alt="{{__('messages.varti') }}" class="img20" title="{{__('messages.varti') }}">
+                <img src="/other/goal.png" alt="{{__('messages.varti') }}" class="img20"
+                    title="{{__('messages.varti') }}">
                 @if($event->assist)
                 <br>
                 <span>(</span>
-                <img src="/other/assist.png" alt="{{__('messages.piespele') }}" class="img20" title="{{__('messages.piespele') }}">
+                <img src="/other/assist.png" alt="{{__('messages.piespele') }}" class="img20"
+                    title="{{__('messages.piespele') }}">
                 <a href="{{ route('player.show', $event->assist->id) }}" class="text-decoration-none text-dark"><span>
                         {{$event->assist->name }})</span></a>
                 @endif
                 @elseif($event->type === 'own_goal')
-                <img src="/other/owngoal.png" alt="{{__('messages.owngoal') }}" class="img20" title="{{__('messages.owngoal') }}">
+                <img src="/other/owngoal.png" alt="{{__('messages.owngoal') }}" class="img20"
+                    title="{{__('messages.owngoal') }}">
                 @elseif($event->type === 'yellow')
-                <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenakartina') }}" class="img20" title="{{__('messages.dzeltenakartina') }}">
+                <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenakartina') }}" class="img20"
+                    title="{{__('messages.dzeltenakartina') }}">
                 @elseif($event->type === 'red')
-                <img src="/other/redcard.png" alt="{{__('messages.sarkanakartina') }}" class="img20" title="{{__('messages.sarkanakartina') }}">
+                <img src="/other/redcard.png" alt="{{__('messages.sarkanakartina') }}" class="img20"
+                    title="{{__('messages.sarkanakartina') }}">
                 @endif
             </div>
             @endif
@@ -130,20 +147,25 @@ $match->awayTeam->name)
             @if($event->team_id === $match->awayTeam->id)
             <span>
                 @if($event->type === 'goal')
-                <img src="/other/goal.png" alt="{{__('messages.varti') }}" class="img20" title="{{__('messages.varti') }}">
+                <img src="/other/goal.png" alt="{{__('messages.varti') }}" class="img20"
+                    title="{{__('messages.varti') }}">
                 @elseif($event->type === 'own_goal')
-                <img src="/other/owngoal.png" alt="{{__('messages.owngoal') }}" class="img20" title="{{__('messages.owngoal') }}">
+                <img src="/other/owngoal.png" alt="{{__('messages.owngoal') }}" class="img20"
+                    title="{{__('messages.owngoal') }}">
                 @elseif($event->type === 'yellow')
-                <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenakartina') }}" class="img20" title="{{__('messages.dzeltenakartina') }}">
+                <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenakartina') }}" class="img20"
+                    title="{{__('messages.dzeltenakartina') }}">
                 @elseif($event->type === 'red')
-                <img src="/other/redcard.png" alt="{{__('messages.sarkanakartina') }}" class="img20" title="{{__('messages.sarkanakartina') }}">
+                <img src="/other/redcard.png" alt="{{__('messages.sarkanakartina') }}" class="img20"
+                    title="{{__('messages.sarkanakartina') }}">
                 @endif
                 <a href="{{ route('player.show', $event->player->id) }}"
                     class="text-decoration-none text-dark"><strong>{{ $event->player->name }}</strong></a>
                 @if($event->type === 'goal' && isset($event->assist))
                 <br>
                 <span>(</span>
-                <img src="/other/assist.png" alt="{{__('messages.piespele') }}" class="img20" title="{{__('messages.piespele') }}">
+                <img src="/other/assist.png" alt="{{__('messages.piespele') }}" class="img20"
+                    title="{{__('messages.piespele') }}">
                 <a href="{{ route('player.show', $event->assist->id) }}" class="text-decoration-none text-dark"><span>{{
                         $event->assist->name }})</span></a>
                 @endif

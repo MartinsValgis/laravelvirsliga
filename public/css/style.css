@@ -101,12 +101,36 @@
     font-weight: bold;
     font-size: 20pt;
 
+}.btn{
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }.btn:hover{
     background-color: #ffffff;
     color: #000000 !important;
+    transform: scale(1.05);
+}.exp{
+    transition: transform 0.2s;
 }.exp:hover{
-    filter: drop-shadow(4px 4px 7px #222);
+    transform: scale(1.1);
 }.flag {
     height: 20px;
     border: 2px solid #000000;
+    transition: transform 0.2s;
+}.flag:hover{
+    transform: scale(1.1);
+}.textbtn{
+    transition: color 0.1s, transform 0.3s;
+}.textbtn:hover{
+    color: #000000 !important;
+    transform: scale(1.05);
+}.hhhover{
+    color: #000000;
+    transition: background-color 0.2s, color 0.2s;
+}.hhhover:hover{
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: #ffffff;
+}.zvaigzne{
+    transition: transform 0.2s;
+}.zvaigzne:hover{
+    transform: scale(1.05);
 }

@@ -45,4 +45,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function favoriteMatches()
+    {
+        return $this->belongsToMany(Matches::class, 'favorite_matches', 'user_id', 'match_id');
+    }
+
+    public function favoriteTeams()
+    {
+        return $this->belongsToMany(Teams::class, 'favorite_teams', 'user_id', 'team_id');
+    }
 }

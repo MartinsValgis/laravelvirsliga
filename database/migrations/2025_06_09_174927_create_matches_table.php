@@ -21,6 +21,7 @@ return new class extends Migration
     $table->integer('homegoals')->nullable();
     $table->integer('awaygoals')->nullable();
     $table->string('stadium', 50)->nullable();
+    $table->boolean('info')->default(false);
     $table->timestamps();
 });
     }

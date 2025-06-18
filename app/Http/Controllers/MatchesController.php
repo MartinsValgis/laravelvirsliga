@@ -97,7 +97,7 @@ class MatchesController extends Controller
         $awayRecentForm = $getLast5Results($awayTeam);
 
         $referee = Referees::find($match->referee_id);
-        $refereeMatches = Matches::where('referee_id', $match->referee_id)->get();
+        $refereeMatches = Matches::where('referee_id', $match->referee_id)->where('info', true)->get();
         $refereeMatchIds = $refereeMatches->pluck('id');
 
         $totalYellowCards = \App\Models\Cards::whereIn('match_id', $refereeMatchIds)

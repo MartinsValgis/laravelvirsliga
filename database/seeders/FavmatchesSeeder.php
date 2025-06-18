@@ -12,9 +12,6 @@ class FavmatchesSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\favorite_matches::create([
-        'user_id' => '1',
-        'match_id' => '1',
-    ]);
+        
     }
 }
