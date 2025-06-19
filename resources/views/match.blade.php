@@ -8,7 +8,7 @@ $match->awayTeam->name)
 </head>
 @section('content')
 <div class="container my-5">
-    
+
     @auth
     <form class="mb-1" method="POST" action="{{ route('favorites.match.toggle', $match->id) }}">
         @csrf
@@ -18,7 +18,7 @@ $match->awayTeam->name)
         </button>
     </form>
     @endauth
-    
+
     <div class="row justify-content-center align-items-center text-center">
 
         <div class="col text-end">

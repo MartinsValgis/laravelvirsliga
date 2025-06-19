@@ -49,7 +49,6 @@ return [
     'piespele' => 'Assist',
     'piespeles' => 'Assists',
     'owngoal' => 'Own goal',
-
     'email' => 'Email',
     'password' => 'Password',
     'remember' => 'Remember me',
@@ -60,4 +59,14 @@ return [
     'confpassword' => 'Confirm password',
     'irkonts' => 'Already have an account?',
     'register' => 'Register',
+    'logout' => 'Logout',
+    'delete' => 'Delete account',
+    'deleteteksts' => 'Deleting your account is irreversible.',
+    'parolemainit' => 'Update password',
+    'paroledescr' => 'Choose a safe password',
+    'currpassw' => 'Current password',
+    'newpassw' => 'New password',
+    'save' => 'Save',
+    'profinf' => 'Account information',
+    'profinfupd' => 'Update account information',
 ];

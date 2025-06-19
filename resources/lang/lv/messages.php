@@ -64,5 +64,17 @@ return [
     'logins' => 'Pierakstīšanās',
     'registers' => 'Reģistrēšanās',
 
+    
+    'logout' => 'Izrakstīties',
+    'delete' => 'Dzēst kontu',
+    'deleteteksts' => 'Konta dzēšana ir neatgriezeniska.',
+    'parolemainit' => 'Mainīt paroli',
+    'paroledescr' => 'Izvēlieties drošu paroli.',
+    'currpassw' => 'Pašreizējā parole',
+    'newpassw' => 'Jaunā parole',
+    'save' => 'Saglabāt',
+    'profinf' => 'Konta informācija',
+    'profinfupd' => 'Atjaunojiet konta informāciju',
+
 
 ];

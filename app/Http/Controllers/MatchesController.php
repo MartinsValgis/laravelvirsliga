@@ -11,7 +11,7 @@ use App\Models\referees;
 use Carbon\Carbon;
 
 class MatchesController extends Controller
-{
+{ 
     public function index()
     {
         $matches = Matches::with(['homeTeam', 'awayTeam'])->get();
@@ -149,5 +149,6 @@ class MatchesController extends Controller
             'homeRecentForm',
             'awayRecentForm'
         ));
+        
     }
 }

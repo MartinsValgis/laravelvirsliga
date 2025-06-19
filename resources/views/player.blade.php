@@ -36,17 +36,20 @@
 
                 <tr class="playertable">
                     <th>
-                        <img src="/other/goal.png" alt="{{__('messages.vartivairaki') }}" class="img40" title="{{__('messages.vartivairaki') }}">
+                        <img src="/other/goal.png" alt="{{__('messages.vartivairaki') }}" class="img40"
+                            title="{{__('messages.vartivairaki') }}">
                     </th>
                     <th>
-                        <img src="/other/assist.png" alt="{{__('messages.piespeles') }}" class="img40" title="{{__('messages.piespeles') }}">
+                        <img src="/other/assist.png" alt="{{__('messages.piespeles') }}" class="img40"
+                            title="{{__('messages.piespeles') }}">
                     </th>
                     <th>
                         <img src="/other/yellowcard.png" alt="{{__('messages.dzeltenaskartinas') }}" class="img40"
                             title="{{__('messages.dzeltenaskartinas') }}">
                     </th>
                     <th>
-                        <img src="/other/redcard.png" alt="{{__('messages.sarkanaskartinas') }}" class="img40" title="{{__('messages.sarkanaskartinas') }}">
+                        <img src="/other/redcard.png" alt="{{__('messages.sarkanaskartinas') }}" class="img40"
+                            title="{{__('messages.sarkanaskartinas') }}">
                     </th>
                 </tr>
                 <tr class="playertable">
@@ -71,7 +74,7 @@
             <div class="text-center" class="img100">
                 <a href="{{ route('player.show', $teammate->id) }}" class="text-decoration-none text-dark">
                     <img src="{{ asset('storage/' . $teammate->img_path) }}" alt="{{ $teammate->name }}"
-                        class="img-fluid mb-2 img100" >
+                        class="img-fluid mb-2 img100">
                     <p>{{ $teammate->name }}</p>
                 </a>
             </div>

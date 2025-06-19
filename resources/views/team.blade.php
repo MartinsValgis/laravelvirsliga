@@ -16,7 +16,8 @@
                     <img src="{{ asset('storage/' . $team->logo_path) }}" alt="Logo" class="img-fluid img150">
                     <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
                         @auth
-                        <form class="mb-1" method="POST" action="{{ route('favorites.team.toggle', ['team' => $team->id]) }} ">
+                        <form class="mb-1" method="POST"
+                            action="{{ route('favorites.team.toggle', ['team' => $team->id]) }} ">
                             @csrf
                             <button type="submit" style="background: none; border: none; padding: 0; margin:0;">
                                 <img src="{{ auth()->user()->favoriteTeams->contains($team->id) ? asset('/other/star.png') : asset('/other/nostar.png') }}"
